@@ -76,6 +76,8 @@ f"how much extra stock to order." )
 weekly_revenue = df.groupby("Product")["Revenue"].sum()
 print(weekly_revenue.sort_values(ascending=False).round(2))
 
+# sets the size of your chart in Matplotlib to 6 inches wide and 4 inches tall
+plt.figure(figsize=(6,4))
 
 #labels the x axis and the y axis
 plt.xlabel("days")
