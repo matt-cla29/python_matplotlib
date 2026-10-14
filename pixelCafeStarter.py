@@ -77,14 +77,33 @@ weekly_revenue = df.groupby("Product")["Revenue"].sum()
 print(weekly_revenue.sort_values(ascending=False).round(2))
 
 # sets the size of your chart in Matplotlib to 6 inches wide and 4 inches tall
-plt.figure(figsize=(6,4))
+# plt.figure(figsize=(6,4))
+
+# groups values into 10 bins
+# plt.hist(df["Day"], bins=10)
+
+# sets line colour and legend label
+# plt.plot(x, y, color="red", label="Day")
 
 #labels the x axis and the y axis
-plt.xlabel("days")
-plt.ylabel("category")
+plt.xlabel("product")
+plt.ylabel("quantity")
+
+# rotates x-axis labels
+# plt.xticks(rotation=45)
+
+#rotates y-axis labels
+# plt.yticks(rotation=45)
 
 # gives the chart a title
 plt.title("cafe sales")
+
+
+# displays labels set when plotting
+plt.legend(["quantity sold"])
+
+#adjusts spacing to fit labels
+# plt.tight_layout()
 
 # displays grid line
 # plt.grid(True)
@@ -93,7 +112,7 @@ plt.title("cafe sales")
 # plt.plot(df["Day"], df["Category"])
 
 # creates a chart with the data selected as a bar graph
-# plt.bar(df["Day"], df["Category"])
+plt.bar(df["Product"], df["Quantity"])
 
 # creates a chart with the data selected as a scatter graph 
 # plt.scatter(df["Day"], df["Category"])
@@ -103,8 +122,13 @@ plt.title("cafe sales")
 # plt.bar(monday_data["Day"], monday_data["Category"])
 
 # only shows monday and tuesday
-selected_days = df[df["Day"].isin(["Monday", "Tuesday"])]
-plt.bar(selected_days["Day"], selected_days["Category"])
+# selected_days = df[df["Day"].isin(["Monday", "Tuesday"])]
+# plt.bar(selected_days["Day"], selected_days["Category"])
 
+
+
+# displays chart
 plt.show()
 
+# closes current figure
+# plt.close()
